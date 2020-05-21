@@ -15,12 +15,11 @@ function succeed(item) {
 }
 
 function fail(item) {
-	if (item.enhancement > 15) {
+	if (item.enhancement < 15) {
 		item.durability -= 5; //decreased by 5
-	} else if (item.enhancement >= 16) {
+	} else if (item.enhancement > 16) {
 		item.durability--;
-		item.durability -= 10;
-	} else {
+	} else if (item.enhancement >= 15) {
 		item.durability -= 10;
 	}
 	return { ...item };
